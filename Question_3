@@ -1,0 +1,30 @@
+3. Create a class called Person with private properties like name, age, and address. Provide public getter and setter methods for these properties. 
+Write a program that creates an instance of the Person class, sets values for its properties using the setter methods, and displays the values using 
+the getter methods.
+
+class Person{
+    privet String name;
+    privet int age ;
+    privet String address;
+    public Person(String name, int age, String address){
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
+public  void setDetails(String name, int age, String address){
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
+    public void getDetails(){
+          System.out.println("Name : "+ name+"age is : "+ age+ "Address is : "+ address);
+    }
+}
+
+class Main{
+  public static void main(String []a){
+    Person p1 = new Person();
+    p1.setDetails("Madan", 23, "Bhubaneswar");
+    p1.getDetails();
+  }
+}
