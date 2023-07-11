@@ -1,0 +1,70 @@
+2. Create a superclass called Shape with an abstract method calculateArea() that returns the area of the shape.
+Implement subclasses Rectangle, Circle, and Triangle that inherit from the Shape class. Implement the calculateArea() method in each subclass to 
+calculate and return the area of a rectangle, circle, and triangle, respectively. Then, create a class called ShapeCalculator with a method
+printArea(Shape shape) that accepts an object of type Shape and prints its area. Demonstrate polymorphism by passing instances of different 
+subclasses to the printArea() method.
+
+abstract Shape{
+  float calculateArea();
+}
+class Rectangle extends Shape{
+  privet float a;
+  privet float b;
+  Rectangle(int a, int b){
+      this.a = a;
+      this.b = b;
+  }
+  public float calculateArea(float a, float b)
+{
+    return a*b;
+}
+}
+
+class Circle extends Shape{
+  privet float pi = 3.14;
+  Circle(int r){
+    this.r = r;
+  }
+  public float calculateArea(float r){
+      return (pi*r*r);
+  }
+}
+
+class Triangle extends Shape{
+    privet float a;
+    privet float b;
+    privet float c;
+    Triangle(float a , float b,float c){
+          this.a = a;
+          this.b = b;
+          this.c = c;
+    }
+  public float calculateArea(float a, float b, float c){
+      float s = (a+b+c)/2;
+      float area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+      return area;
+  }
+}
+class ShapeCalculator{
+  
+
+  void printArea(Shape shape){
+      float area = shape.calculateArea();
+      System.out.println("Area is "+area);
+  }
+}
+
+class Main{
+  public static void main(String [] args){
+      ShapeCalculator Sc = new ShapeCalculator();
+      Rectangle r = new Rectangle(5,6);
+      Circle c = new Circle(5);
+      Triangle t = new Triangle(8,8,7);
+
+      Sc.printArea(r);
+      Sc.printArea(c);
+      Sc.printArea(t);
+      
+
+  }
+}
