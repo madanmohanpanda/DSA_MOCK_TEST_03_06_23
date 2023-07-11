@@ -1,0 +1,44 @@
+/*1. Create a superclass called Animal with a method makeSound() that prints the sound made by the animal. Implement subclasses Dog, Cat, and Cow that inherit from the Animal class. Implement the makeSound() method in each subclass to print the sound made by a dog, cat, and cow, respectively.*/
+
+class Animal{
+
+  void makeSound(){
+    System.out.println("Making sound");
+  }
+}
+class Dog extends Animal{
+  public void makeSound(){
+    System.out.println("Making sound by Dog");
+  }
+}
+class Cat extends Animal{
+  public void makeSound(){
+    System.out.println("Making sound by Cat");
+  }
+}
+class Cow extends Animal{
+  public void makeSound(){
+    System.out.println("Making sound by Cow");
+  }
+}
+class Main{
+  public static void main(String [] args){
+    Dog g = new Dog();
+    Cat c = new Cat();
+    Cow cw = new Cow();
+    g.makeSound();
+    c.makeSound();
+    cw.makeSound();
+
+    //Or you can create only one parent class refference
+    Animal a = new Dog();
+    a.makesound();
+    a = new Cat();
+    a.makeSound();
+    a = new Cow();
+    a.makeSound();
+
+    }
+}
+  }
+}
